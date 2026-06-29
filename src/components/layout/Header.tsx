@@ -16,18 +16,18 @@ export function Header({ title, subtitle, actions }: HeaderProps) {
 
   return (
     <div className="page-header">
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 0 }}>
+      <div className="flex items-center gap-2.5 min-w-0">
         {ctx?.onMenuToggle && (
           <button className="menu-toggle" onClick={ctx.onMenuToggle} aria-label="Menu">
             <RiMenuLine />
           </button>
         )}
-        <div style={{ minWidth: 0 }}>
-          <h1 style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{title}</h1>
-          {subtitle && <p style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{subtitle}</p>}
+        <div className="min-w-0">
+          <h1 className="overflow-hidden text-ellipsis whitespace-nowrap">{title}</h1>
+          {subtitle && <p className="overflow-hidden text-ellipsis whitespace-nowrap">{subtitle}</p>}
         </div>
       </div>
-      {actions && <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>{actions}</div>}
+      {actions && <div className="flex items-center gap-2.5 shrink-0">{actions}</div>}
     </div>
   );
 }
