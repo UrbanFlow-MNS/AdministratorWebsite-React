@@ -24,11 +24,11 @@ export function Sidebar({ open, onClose }: SidebarProps) {
 
       <div className="sidebar-logo">
         <div className="sidebar-logo-icon">
-          <RiBusLine style={{ color: '#fff', fontSize: '1.1rem' }} />
+          <RiBusLine className="text-white text-[1.1rem]" />
         </div>
         <div>
-          <p style={{ fontSize: '0.875rem', fontWeight: 700, color: '#0A0A0A', lineHeight: 1 }}>UrbanFlow</p>
-          <p style={{ fontSize: '0.75rem', color: '#6E6E73', marginTop: 3 }}>Administration</p>
+          <p className="text-sm font-bold text-ink leading-none">UrbanFlow</p>
+          <p className="text-xs text-muted mt-[3px]">Administration</p>
         </div>
       </div>
 
