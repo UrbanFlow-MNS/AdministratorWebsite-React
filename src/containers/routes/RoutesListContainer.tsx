@@ -43,7 +43,6 @@ export const RoutesListContainer = observer(() => {
       />
 
       <div className="flex-1 overflow-y-auto p-4 md:px-8 md:py-6 flex flex-col gap-4">
-        {/* Search */}
         <div className="relative max-w-xs">
           <RiSearchLine className="absolute left-3 top-1/2 -translate-y-1/2 text-faint pointer-events-none" />
           <input
@@ -54,14 +53,12 @@ export const RoutesListContainer = observer(() => {
           />
         </div>
 
-        {/* Loading */}
         {routesStore.loading && (
           <div className="text-center py-12 text-muted text-sm">
             Chargement des lignes…
           </div>
         )}
 
-        {/* Empty */}
         {!routesStore.loading && filtered.length === 0 && (
           <div className="flex flex-col items-center justify-center py-16 gap-3">
             <div className="w-12 h-12 rounded-full bg-primary-light flex items-center justify-center">
@@ -78,7 +75,6 @@ export const RoutesListContainer = observer(() => {
           </div>
         )}
 
-        {/* Table */}
         {!routesStore.loading && filtered.length > 0 && (
           <div className="card overflow-hidden p-0">
             <div className="overflow-x-auto">

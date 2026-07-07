@@ -82,7 +82,6 @@ export const CreateRouteContainer = observer(() => {
             <div className="card-header">Informations de la ligne</div>
             <div className="card-body flex flex-col gap-[18px]">
 
-              {/* Preview badge */}
               {(form.shortName || form.longName) && (
                 <div className="flex items-center gap-3 px-4 py-3 bg-[#F7F7FA] rounded-[10px] border border-border">
                   <span className="inline-flex items-center justify-center min-w-[36px] px-2.5 h-8 rounded-lg text-sm font-bold shrink-0 bg-primary text-white">
