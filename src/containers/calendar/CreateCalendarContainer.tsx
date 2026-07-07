@@ -98,7 +98,6 @@ export function CreateCalendarContainer() {
                 </div>
               )}
 
-              {/* Days selector */}
               <div className="field">
                 <label>Jours de service</label>
                 <div className="flex gap-1.5 mt-0.5">
@@ -125,13 +124,11 @@ export function CreateCalendarContainer() {
                 )}
               </div>
 
-              {/* Dates */}
               <div className="grid grid-cols-2 gap-3.5">
                 <Input label="Date de début" type="date" value={form.startDate} onChange={(e) => { setForm((f) => ({ ...f, startDate: e.target.value })); if (errors.startDate) setErrors((e) => ({ ...e, startDate: undefined })); }} error={errors.startDate} />
                 <Input label="Date de fin" type="date" value={form.endDate} onChange={(e) => { setForm((f) => ({ ...f, endDate: e.target.value })); if (errors.endDate) setErrors((e) => ({ ...e, endDate: undefined })); }} error={errors.endDate} />
               </div>
 
-              {/* Preview */}
               {form.startDate && form.endDate && (
                 <div className="flex items-center gap-3 px-4 py-3 bg-[#F7F7FA] rounded-[10px] border border-border">
                   <div className="w-10 h-10 rounded-[10px] bg-[#FFF3E0] flex items-center justify-center shrink-0">
