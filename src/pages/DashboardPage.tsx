@@ -10,8 +10,11 @@ import { Button } from '../components/ui/Button';
 function StatCard({ label, value, icon: Icon, bg, to }: { label: string; value: number | string; icon: React.ElementType; bg: string; to: string }) {
   const navigate = useNavigate();
   return (
-    <div className="stat-card" onClick={() => navigate(to)}>
-      <div className="stat-icon" style={{ background: bg }}><Icon /></div>
+    <div
+      className="bg-surface border border-border rounded-[14px] shadow-[0_2px_8px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)] px-6 py-[22px] flex items-center gap-4 cursor-pointer transition-[box-shadow,transform] duration-200 hover:shadow-[0_4px_16px_rgba(0,0,0,0.10),0_2px_6px_rgba(0,0,0,0.06)] hover:-translate-y-px"
+      onClick={() => navigate(to)}
+    >
+      <div className="w-12 h-12 rounded-[10px] flex items-center justify-center shrink-0 text-[1.375rem] text-white" style={{ background: bg }}><Icon /></div>
       <div className="flex-1 min-w-0">
         <p className="text-[2rem] font-bold text-ink leading-none">{value}</p>
         <p className="text-[0.8125rem] text-muted mt-1">{label}</p>
@@ -41,7 +44,7 @@ export const DashboardPage = observer(() => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="card overflow-hidden">
+          <div className="bg-surface border border-border rounded-[14px] shadow-[0_2px_8px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)] overflow-hidden">
             <div className="flex items-center justify-between px-5 py-3.5 border-b border-border">
               <div className="flex items-center gap-2">
                 <div className="w-[26px] h-[26px] rounded-md bg-primary-light flex items-center justify-center">
@@ -73,7 +76,7 @@ export const DashboardPage = observer(() => {
             ))}
           </div>
 
-          <div className="card overflow-hidden">
+          <div className="bg-surface border border-border rounded-[14px] shadow-[0_2px_8px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)] overflow-hidden">
             <div className="flex items-center justify-between px-5 py-3.5 border-b border-border">
               <div className="flex items-center gap-2">
                 <div className="w-[26px] h-[26px] rounded-md bg-[#EBF5FF] flex items-center justify-center">

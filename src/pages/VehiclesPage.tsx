@@ -32,18 +32,18 @@ export default function VehiclesPage() {
         actions={<Button size="sm" onClick={() => navigate('/vehicles/create')}><RiAddLine /> Ajouter</Button>}
       />
       <div className="flex-1 overflow-y-auto p-4 md:px-8 md:py-6">
-        <div className="card overflow-hidden p-0">
-          <div className="card-header">Tous les véhicules ({vehicles.length})</div>
+        <div className="bg-surface border border-border rounded-[14px] shadow-[0_2px_8px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)] overflow-hidden">
+          <div className="px-5 py-3.5 border-b border-border text-sm font-semibold text-ink">Tous les véhicules ({vehicles.length})</div>
           {loading ? (
-            <div className="card-body text-center text-muted p-12">Chargement…</div>
+            <div className="text-center text-muted p-12">Chargement…</div>
           ) : vehicles.length === 0 ? (
-            <div className="card-body text-center text-muted p-12">
+            <div className="text-center text-muted p-12">
               <RiBusLine className="text-[2rem] mb-2 opacity-40 mx-auto" />
               <p>Aucun véhicule enregistré.</p>
             </div>
           ) : (
             <div className="overflow-x-auto">
-              <table className="data-table w-full border-collapse">
+              <table className="w-full border-collapse text-sm [&_th]:bg-[#F7F7FA] [&_th]:px-5 [&_th]:py-2.5 [&_th]:text-xs [&_th]:font-semibold [&_th]:uppercase [&_th]:tracking-[0.04em] [&_th]:text-muted [&_th]:border-b [&_th]:border-border [&_td]:px-5 [&_td]:py-3 [&_td]:align-middle [&_td]:border-b [&_td]:border-[#F0F0F5] [&_tr:last-child_td]:border-b-0 [&_tr:hover_td]:bg-[#FAFAFD]">
                 <thead>
                   <tr>
                     <th className="text-left">Immatriculation</th>
@@ -60,12 +60,12 @@ export default function VehiclesPage() {
                       <td className="text-muted">{v.model || '—'}</td>
                       <td className="text-muted">{v.capacity ? `${v.capacity} places` : '—'}</td>
                       <td>
-                        <span className="badge bg-[#EBF5FF] text-info">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#EBF5FF] text-info">
                           {v.status || 'actif'}
                         </span>
                       </td>
                       <td className="text-right">
-                        <button className="btn btn-ghost btn-sm" onClick={() => handleDelete(v.id)} title="Supprimer">
+                        <button className="inline-flex items-center justify-center gap-1.5 h-8 px-3 text-[0.8125rem] font-medium rounded-[10px] cursor-pointer whitespace-nowrap border-none outline-none transition-[background-color,box-shadow,opacity] duration-150 disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-muted enabled:hover:bg-canvas enabled:hover:text-ink" onClick={() => handleDelete(v.id)} title="Supprimer">
                           <RiDeleteBinLine />
                         </button>
                       </td>
