@@ -78,9 +78,9 @@ export const CreateRouteContainer = observer(() => {
 
       <div className="flex-1 overflow-y-auto p-4 md:px-8 md:py-6">
         <div className="max-w-[560px]">
-          <div className="card">
-            <div className="card-header">Informations de la ligne</div>
-            <div className="card-body flex flex-col gap-[18px]">
+          <div className="bg-surface border border-border rounded-[14px] shadow-[0_2px_8px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)]">
+            <div className="px-5 py-3.5 border-b border-border text-sm font-semibold text-ink">Informations de la ligne</div>
+            <div className="p-5 flex flex-col gap-[18px]">
 
               {(form.shortName || form.longName) && (
                 <div className="flex items-center gap-3 px-4 py-3 bg-[#F7F7FA] rounded-[10px] border border-border">

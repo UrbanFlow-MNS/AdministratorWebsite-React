@@ -88,9 +88,9 @@ export function CreateCalendarContainer() {
 
       <div className="flex-1 overflow-y-auto p-4 md:px-8 md:py-6">
         <div className="max-w-[520px]">
-          <div className="card">
-            <div className="card-header">Informations du calendrier</div>
-            <div className="card-body flex flex-col gap-[18px]">
+          <div className="bg-surface border border-border rounded-[14px] shadow-[0_2px_8px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)]">
+            <div className="px-5 py-3.5 border-b border-border text-sm font-semibold text-ink">Informations du calendrier</div>
+            <div className="p-5 flex flex-col gap-[18px]">
 
               {success && (
                 <div className="bg-success/10 border border-success/40 rounded-lg px-3.5 py-2.5 text-sm font-medium text-success-ink">
@@ -98,8 +98,8 @@ export function CreateCalendarContainer() {
                 </div>
               )}
 
-              <div className="field">
-                <label>Jours de service</label>
+              <div className="flex flex-col gap-[5px]">
+                <label className="text-[0.8125rem] font-medium text-ink">Jours de service</label>
                 <div className="flex gap-1.5 mt-0.5">
                   {DAYS.map(({ key, label }) => (
                     <button
