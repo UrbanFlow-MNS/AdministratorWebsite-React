@@ -118,7 +118,7 @@ export const EditStopContainer = observer(() => {
 
       <div className="flex flex-col md:flex-row flex-1 overflow-y-auto md:overflow-hidden p-4 md:p-5 gap-4">
         <div className="relative h-[300px] md:h-auto flex-none md:flex-1">
-          <div className="map-wrapper h-full">
+          <div className="relative h-full rounded-[14px] overflow-hidden border border-border shadow-[0_4px_16px_rgba(0,0,0,0.10),0_2px_6px_rgba(0,0,0,0.06)]">
             <StopsMap
               stops={stopsStore.stops.filter((s) => s.stopId !== stopId)}
               pendingPin={pendingPin}

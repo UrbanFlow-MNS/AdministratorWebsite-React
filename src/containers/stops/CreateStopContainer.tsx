@@ -82,7 +82,7 @@ export const CreateStopContainer = observer(() => {
 
       <div className="flex flex-col md:flex-row flex-1 overflow-y-auto md:overflow-hidden p-4 md:p-5 gap-4">
         <div className="relative h-[300px] md:h-auto flex-none md:flex-1">
-          <div className="map-wrapper h-full">
+          <div className="relative h-full rounded-[14px] overflow-hidden border border-border shadow-[0_4px_16px_rgba(0,0,0,0.10),0_2px_6px_rgba(0,0,0,0.06)]">
             <StopsMap
               stops={stopsStore.stops}
               pendingPin={pendingPin}
@@ -103,9 +103,9 @@ export const CreateStopContainer = observer(() => {
         </div>
 
         <div className="w-full md:w-[360px] md:flex-shrink-0 md:overflow-y-auto">
-          <div className="card h-fit">
-            <div className="card-header">Informations de l'arrêt</div>
-            <div className="card-body flex flex-col gap-4">
+          <div className="bg-surface border border-border rounded-[14px] shadow-[0_2px_8px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)] h-fit">
+            <div className="px-5 py-3.5 border-b border-border text-sm font-semibold text-ink">Informations de l'arrêt</div>
+            <div className="p-5 flex flex-col gap-4">
 
               {successMessage && (
                 <div className="bg-success/10 border border-success/40 rounded-lg px-3.5 py-2.5 text-sm font-medium text-success-ink">
@@ -181,7 +181,7 @@ export const CreateStopContainer = observer(() => {
                 )}
 
                 {inputMode === 'map' && (errors.latitude || errors.longitude) && (
-                  <p className="field-error">Veuillez sélectionner un point sur la carte.</p>
+                  <p className="text-xs text-error">Veuillez sélectionner un point sur la carte.</p>
                 )}
               </div>
 
