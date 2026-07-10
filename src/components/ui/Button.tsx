@@ -9,17 +9,20 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
 }
 
+const baseClass =
+  'inline-flex items-center justify-center gap-1.5 font-medium rounded-[10px] cursor-pointer whitespace-nowrap no-underline border-none outline-none transition-[background-color,box-shadow,opacity] duration-150 disabled:opacity-50 disabled:cursor-not-allowed';
+
 const variantClass: Record<Variant, string> = {
-  primary:   'btn-primary',
-  secondary: 'btn-secondary',
-  ghost:     'btn-ghost',
-  danger:    'btn-danger',
+  primary:   'bg-primary text-white enabled:hover:bg-primary-hover',
+  secondary: 'bg-[#EBEBF0] text-ink enabled:hover:bg-[#E0E0E8]',
+  ghost:     'bg-transparent text-muted enabled:hover:bg-canvas enabled:hover:text-ink',
+  danger:    'bg-error text-white enabled:hover:bg-[#e0352a]',
 };
 
 const sizeClass: Record<Size, string> = {
-  sm: 'btn-sm',
-  md: 'btn-md',
-  lg: 'btn-lg',
+  sm: 'h-8 px-3 text-[0.8125rem]',
+  md: 'h-[38px] px-4 text-sm',
+  lg: 'h-11 px-5 text-[0.9375rem]',
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -27,7 +30,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     <button
       ref={ref}
       disabled={disabled || loading}
-      className={['btn', variantClass[variant], sizeClass[size], className].join(' ')}
+      className={[baseClass, variantClass[variant], sizeClass[size], className].join(' ')}
       {...props}
     >
       {loading && (
