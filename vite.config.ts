@@ -8,7 +8,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [
     react(),
-    tailwindcss()
+    tailwindcss(),
   ],
   test: {
     coverage: {

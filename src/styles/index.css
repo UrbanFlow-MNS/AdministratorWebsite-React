@@ -1,70 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+html, body, #root {
+  height: 100%;
+  font-family: "Outfit", sans-serif;
+  background-color: #F0F0F5;
+  color: #0A0A0A;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+button, input, textarea, select { font-family: inherit; }
+
+@theme {
+  --color-primary:        #6912E2;
+  --color-primary-hover:  #5A0DC0;
+  --color-primary-light:  #F3E8FF;
+  --color-surface:        #FFFFFF;
+  --color-canvas:         #F0F0F5;
+  --color-border:         #E2E2E8;
+  --color-border-strong:  #CCCCD4;
+  --color-ink:            #0A0A0A;
+  --color-muted:          #6E6E73;
+  --color-faint:          #AEAEB2;
+  --color-success:        #34C759;
+  --color-success-ink:    #1A7A35;
+  --color-error:          #FF3B30;
+  --color-info:           #007AFF;
+  --color-warning:        #FF9F0A;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.leaflet-container {
+  font-family: "Outfit", sans-serif;
+  height: 100%;
+  width: 100%;
 }
